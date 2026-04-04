@@ -43,34 +43,34 @@ button {
     margin-left: 360px; 
     margin-right: 35px;
 
-    background-image: url("icons/bluelock.png");
+    background-image: url("icons/lock.png");
 }
 
 #lock:hover {
     border-color: @hovercolor;
-    background-image: url("icons/redlock.png");
+    background-image: url("icons/hoverlock.png");
 }
 
 #reboot {
     margin-left: 35px;
     margin-right: 35px;
 
-    background-image: url("icons/bluereboot.png");
+    background-image: url("icons/reboot.png");
 }
 
 #reboot:hover {
     border-color: @hovercolor;
-    background-image: url("icons/redreboot.png");
+    background-image: url("icons/hoverreboot.png");
 }
 
 #shutdown {
     margin-left: 35px;
     margin-right: 360px;
 
-    background-image: url("icons/blueshutdown.png");
+    background-image: url("icons/shutdown.png");
 }
 
 #shutdown:hover {
     border-color: @hovercolor;
-    background-image: url("icons/redshutdown.png");
+    background-image: url("icons/hovershutdown.png");
 }
