@@ -56,7 +56,7 @@
         "format": "  {icon}  {capacity}%",
 	"format-icons": {
 	        "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "charging": ["󰢟󰂄"]},	
+        "charging": ["󰂄", "󰂄", "󰂄", "󰂄", "󰂄", "󰂄", "󰂄", "󰂄", "󰂄", "󰂄", "󰂄"]},	
         "interval": 5,
         "states": {
             "warning": 20,
