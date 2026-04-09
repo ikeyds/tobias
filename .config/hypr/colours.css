@@ -23,3 +23,35 @@ $dark-teal-3: rgba(2, 73, 78, 1);
 $dark-cyan-3: rgba(32, 134, 129, 1);
 
 https://coolors.co/579999-d4d8d7-a5bebd-85b1b1-488482-0f4a51-066261-023237-02494e-208681
+
+
+
+/* new colours */
+
+https://coolors.co/d4d8d7-a5bebd-208681-488482-0f4a51-3e3447-be462d-ba830f-37432b-222525
+
+/* SCSS HEX */
+$alabaster-grey: #d4d8d7ff;
+$ash-grey: #a5bebdff;
+$dark-cyan: #208681ff;
+$dark-cyan-2: #488482ff;
+$dark-teal: #0f4a51ff;
+$vintage-grape: #3e3447ff;
+$light-grape: #584a64ff;
+$tomato-jam: #be462dff;
+$dark-goldenrod: #ba830fff;
+$dark-spruce: #37432bff;
+$carbon-black: #222525ff;
+
+/* SCSS RGB */
+$alabaster-grey: rgba(212, 216, 215, 1);
+$ash-grey: rgba(165, 190, 189, 1);
+$dark-cyan: rgba(32, 134, 129, 1);
+$dark-cyan-2: rgba(72, 132, 130, 1);
+$dark-teal: rgba(15, 74, 81, 1);
+$vintage-grape: rgba(62, 52, 71, 1);
+$light-grape: rgba(88,74,100,1);
+$tomato-jam: rgba(190, 70, 45, 1);
+$dark-goldenrod: rgba(186, 131, 15, 1);
+$dark-spruce: rgba(55, 67, 43, 1);
+$carbon-black: rgba(34, 37, 37, 1);
