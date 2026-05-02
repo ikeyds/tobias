@@ -1,10 +1,8 @@
 [app]
 overall = {bg = "#222525" }
 
-# : Manager {{{
-
 [mgr]
-cwd = { fg = "#023237" } # didn't change this
+cwd = { fg = "#a5bebd" } #colour of path in top left
 
 # Find
 find_keyword  = { fg = "#d8a657", bold = true, italic = true, underline = true }
@@ -68,22 +66,11 @@ perm_exec  = { fg = "#a9b665" }
 # Progress
 progress_label  = { fg = "#ddc7a1", bold = true }
 progress_normal = { fg = "#a9b665", bg = "#45403d" }
-progress_error  = { fg = "#d8a657", bg = "#ea6962" }
-
-# : }}}
-
-
-# : Pick {{{
 
 [pick]
 border   = { fg = "#7daea3" } #didn't change this
 active   = { fg = "#ff0000", bold = true }
 inactive = {}
-
-# : }}}
-
-
-# : Input {{{
 
 [input]
 border   = { fg = "#7daea3" }
@@ -91,34 +78,16 @@ title    = {}
 value    = {}
 selected = { reversed = true }
 
-# : }}}
-
-
-
-# : Tasks {{{
-
 [tasks]
 border  = { fg = "#7daea3" }
 title   = {}
 hovered = { fg = "#d3869b", bold = true }
-
-# : }}}
-
-
-# : Help {{{
 
 [help]
 on      = { fg = "#89b482" }
 run     = { fg = "#d3869b" }
 hovered = { reversed = true, bold = true }
 footer  = { fg = "#32302f", bg = "#d4be98" }
-
-# : }}}
-
-
-
-
-# : File-specific styles {{{
 
 [filetype]
 
