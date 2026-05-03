@@ -1,4 +1,5 @@
 require("vim-options")
+vim.g.maplocalleader = " "
 require("keymaps")
 
 require("config.lazy")
