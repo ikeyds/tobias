@@ -2,6 +2,10 @@ return {
 
 	{ "NMAC427/guess-indent.nvim", opts = {} },
 
+	-- Here is a more advanced example where we pass configuration
+	-- options to `gitsigns.nvim`.
+	--
+	-- See `:help gitsigns` to understand what the configuration keys do
 	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
 		---@module 'gitsigns'
@@ -41,6 +45,35 @@ return {
 			{ "j-hui/fidget.nvim", opts = {} },
 		},
 		config = function()
+			-- Brief aside: **What is LSP?**
+			--
+			-- LSP is an initialism you've probably heard, but might not understand what it is.
+			--
+			-- LSP stands for Language Server Protocol. It's a protocol that helps editors
+			-- and language tooling communicate in a standardized fashion.
+			--
+			-- In general, you have a "server" which is some tool built to understand a particular
+			-- language (such as `gopls`, `lua_ls`, `rust_analyzer`, etc.). These Language Servers
+			-- (sometimes called LSP servers, but that's kind of like ATM Machine) are standalone
+			-- processes that communicate with some "client" - in this case, Neovim!
+			--
+			-- LSP provides Neovim with features like:
+			--  - Go to definition
+			--  - Find references
+			--  - Autocompletion
+			--  - Symbol Search
+			--  - and more!
+			--
+			-- Thus, Language Servers are external tools that must be installed separately from
+			-- Neovim. This is where `mason` and related plugins come into play.
+			--
+			-- If you're wondering about lsp vs treesitter, you can check out the wonderfully
+			-- and elegantly composed help section, `:help lsp-vs-treesitter`
+
+			--  This function gets run when an LSP attaches to a particular buffer.
+			--    That is to say, every time a new file is opened that is associated with
+			--    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
+			--    function will be executed to configure the current buffer
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 				callback = function(event)
@@ -229,34 +262,7 @@ return {
 		"saghen/blink.cmp",
 		event = "VimEnter",
 		version = "1.*",
-		dependencies = {
-			-- Snippet Engine
-			{
-				"L3MON4D3/LuaSnip",
-				version = "2.*",
-				build = (function()
-					-- Build Step is needed for regex support in snippets.
-					-- This step is not supported in many windows environments.
-					-- Remove the below condition to re-enable on windows.
-					if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
-						return
-					end
-					return "make install_jsregexp"
-				end)(),
-				dependencies = {
-					-- `friendly-snippets` contains a variety of premade snippets.
-					--    See the README about individual language/framework/plugin snippets:
-					--    https://github.com/rafamadriz/friendly-snippets
-					-- {
-					--   'rafamadriz/friendly-snippets',
-					--   config = function()
-					--     require('luasnip.loaders.from_vscode').lazy_load()
-					--   end,
-					-- },
-				},
-				opts = {},
-			},
-		},
+		dependencies = {},
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
@@ -319,7 +325,6 @@ return {
 			signature = { enabled = true },
 		},
 	},
-
 	-- Highlight todo, notes, etc in comments
 	{
 		"folke/todo-comments.nvim",
@@ -363,6 +368,9 @@ return {
 			statusline.section_location = function()
 				return "%2l:%-2v"
 			end
+
+			-- ... and there is more!
+			--  Check out: https://github.com/nvim-mini/mini.nvim
 		end,
 	},
 
@@ -386,7 +394,6 @@ return {
 				"query",
 				"vim",
 				"vimdoc",
-				"tex", -- I added this so idk if its gonna work
 			}
 			require("nvim-treesitter").install(parsers)
 
@@ -437,16 +444,6 @@ return {
 			})
 		end,
 	},
-
-	-- VimLaTeX hopefully
-	{
-		"lervag/vimtex",
-		lazy = false, -- we don't want to lazy load VimTeX
-		init = function()
-			-- VimTeX configuration goes here, e.g.
-			vim.g.vimtex_view_method = "zathura_simple"
-		end,
-	},
 	{
 		"L3MON4D3/LuaSnip",
 		-- follow latest release.
@@ -454,26 +451,4 @@ return {
 		-- install jsregexp (optional!).
 		build = "make install_jsregexp",
 	},
-
-	--
-	--  Here are some example plugins that I've included in the Kickstart repository.
-	--  Uncomment any of the lines below to enable them (you will need to restart nvim).
-	--
-	-- require 'kickstart.plugins.debug',
-	-- require 'kickstart.plugins.indent_line',
-	-- require 'kickstart.plugins.lint',
-	-- require 'kickstart.plugins.autopairs',
-	-- require 'kickstart.plugins.neo-tree',
-	-- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommended keymaps
-
-	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-	--    This is the easiest way to modularize your config.
-	--
-	--  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-	-- { import = 'custom.plugins' },
-	--
-	-- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
-	-- Or use telescope!
-	-- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
-	-- you can continue same window with `<space>sr` which resumes last telescope search
 }
