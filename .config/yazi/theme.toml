@@ -119,7 +119,7 @@ dirs = [
 	{ name = "Desktop", text = "", fg = "#488482" },
 	{ name = "Development", text = "", fg = "#a5bebd" },
 	{ name = "Documents", text = "", fg = "#488482" },
-	{ name = "Downloads", text = "", fg = "#89b482" },
+	{ name = "Downloads", text = "󰇚", fg = "#89b482" },
 	{ name = "Library", text = "", fg = "#89b482" },
 	{ name = "Movies", text = "", fg = "#89b482" },
 	{ name = "Music", text = "", fg = "#488482" },
