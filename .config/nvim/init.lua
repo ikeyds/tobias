@@ -1,9 +1,15 @@
 require("vim-options")
 vim.g.maplocalleader = " "
 require("keymaps")
-
 require("config.lazy")
-
+-- highlight when yanking
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.hl.on_yank()
+	end,
+})
 -- - Yes, we're just executing a bunch of Vimscript, but this is the officially
 -- endorsed method; see https://github.com/L3MON4D3/LuaSnip#keymaps
 vim.cmd([[
